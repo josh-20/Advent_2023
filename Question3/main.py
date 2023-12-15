@@ -11,13 +11,9 @@ def checkForNumbers(i, j, matrix):
             new_j = j + col
             if 0 <= new_i < len(matrix) and 0 <= new_j < len(matrix[0]):
                 if matrix[new_i][new_j].isdigit():
-                    for digit in range(-2, 2):
-                        if 0 <= new_i + digit < len(matrix):
-                            if( matrix[new_i][new_j + digit].isdigit()):
-                                print(matrix[new_i][new_j + digit])
-                                value += matrix[new_i + digit][new_j]
+                    while matrix[new_i][new_j].isdigit():
+                        if 0 <= new_j + 1 < len(matrix):
                                 
-                    validNumbers.append(value)
     return validNumbers
 matrix = []
 for input in lines:
